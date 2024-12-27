@@ -16,7 +16,6 @@ export class ServerApp {
         
         const table = new CreateTable()
             .execute({base, limit});
-
         const wasCreated = new SaveFile().execute({
             fileContent: table,
             filePath: directory,
@@ -25,7 +24,7 @@ export class ServerApp {
 
         if (showTable) console.log(table);
         (wasCreated)
-        ? console.log('Dile created')
+        ? console.log('File created')
         : console.log('Error creating file');
     }
 }

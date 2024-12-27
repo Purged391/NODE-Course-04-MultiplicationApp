@@ -20,6 +20,18 @@ export const yarg = yargs(process.argv)
     type: 'boolean',
     default: false,
 })
+.options('n', {
+    alias: 'name',
+    describe: 'File name',
+    type: 'string',
+    default: 'table'
+})
+.options('d', {
+    alias: 'directory',
+    describe: 'Output directory',
+    type: 'string',
+    default: 'outputs'
+})
 .check((argv, options) => {
     if (argv.b < 1) throw 'The base must be greater than 0';
     
